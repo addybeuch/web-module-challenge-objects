@@ -15,11 +15,12 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 // pass 3 parameters - name price category
-function createMenuItem(array, name, price, category){
-  array.push({name, price, category});
-  return array;
+
+
+function createMenuItem(name, price, category){
+  return {name, price, category};
 }
-console.log(createMenuItem(taco, 8, lunch))
+console.log(createMenuItem("taco", 8, "lunch"))
 // return object with those parameters
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -31,7 +32,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-
+console.log(createMenuItem("steak", 12, "dinner"))
+console.log(createMenuItem("chicken nuggets", 4, "lunch"))
+console.log(createMenuItem("orange juice", 2, "breakfast"))
 // not being graded just invoking from 1a 3 times
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -50,8 +53,15 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  discount: function(human){
+    if (human === "teacher" || human === "student"){
+      return this.price * 0.75;
+    }else if (human === "public");{
+      return this.price * 0.9
+    }
+  }
 }
+console.log(burger.discount("teacher"))
 
 //method called discount and giving teachers and students a discount and public a different discount you "this" when refrencing key inside of method - this.price. you are not updating
 // value of price you are just returning discounted
@@ -73,7 +83,7 @@ Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
 
-// not graded just console logging
+console.log(reviews[5])
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -96,9 +106,9 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 // pass array, name, rating, feedback as params
-function addReview(/*Your Code Here */){
-  /*Your Code Here */
-  // push object to the end of array and return the resulting array
+function addReview(array, name, rating, feedback){
+  array.push({name, rating, feedback});
+  return array;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -112,11 +122,10 @@ Use the getReviewByIndex function below to do the following:
 */
 
 // array, index
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
-  //return the string
+function getReviewByIndex(array, index) {
+  return `${array[index].name} gave the restaurant a ${array[index].rating} star review, and their feedback was: ${array[index].feedback}`
 }
-
+console.log(getReviewByIndex(reviews, 2))
 
   
 
@@ -132,11 +141,11 @@ Use the getLastReview function below to do the following:
 */
 
 // recieve an array as a param
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
-  // array.length-1 will be useful
+function getLastReview(array){
+  return `${array[array.length-1].name} gave the restaurant a ${array[array.length-1].rating} star review, and their feedback was: ${array[array.length-1].feedback}`
 } 
-
+console.log(getLastReview(reviews))
+// array.length-1 will be useful
 //return the last review
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////

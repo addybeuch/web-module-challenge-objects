@@ -15,10 +15,11 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 // pass 3 parameters - name price category
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+function createMenuItem(array, name, price, category){
+  array.push({name, price, category});
+  return array;
 }
-
+console.log(createMenuItem(taco, 8, lunch))
 // return object with those parameters
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
